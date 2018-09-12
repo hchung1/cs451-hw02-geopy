@@ -25,13 +25,17 @@ def starting():
   one = geo_locator(pos1)
   two = geo_locator(pos2)
   result(pos2, pos1, one,two)
-  
-command = {1:starting, 2:exit}
+  return True
+
+def end():
+  return False
 a = True
-while a == True:
+command = {1:starting, 2:end}
+print ("This python code uses Python 2. An alternative solution is to replace raw_input with input. I am not sure if this method would work though.\n")
+while a != False:
   try:
     ans = int(input("Enter 1 to start.\nEnter 2 to quit.\n>>"))
-    command[ans]()
+    a = command[ans]()
   except:
     pass
 
